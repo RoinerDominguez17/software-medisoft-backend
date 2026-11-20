@@ -1,4 +1,4 @@
 package com.medisoftbackend.Paciente;
 
-public class PacienteRepository {
+public interface PacienteRepository {
 }
