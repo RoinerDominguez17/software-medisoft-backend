@@ -1,7 +1,9 @@
-package com.medisoftbackend.Paciente;
+package com.medisoftbackend.paciente;
 
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "pacientes")
@@ -15,13 +17,16 @@ public class Paciente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(unique = true)
+    private String documento;
     private String nombres;
     private String apellidos;
     private String sexo;
-    @Column(unique = true)
-    private Integer documento;
-    private Integer anioNacimiento;
+    private LocalDate fechaNacimiento;
     private String email;
     private String direccion;
     private String telefono;
+    private String celular;
+    private String eps;
+    private Boolean estado = true;
 }
